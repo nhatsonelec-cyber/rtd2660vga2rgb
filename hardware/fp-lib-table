@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "rtd2660vga2rgb")(type "KiCad")(uri "${KIPRJMOD}/rtd2660vga2rgb.pretty")(options "")(descr "Project footprints"))
+)
