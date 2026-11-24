@@ -635,8 +635,9 @@
         <element name="J6" library="rtd2660_board" package="HDR1X6-2.54" value="INVERTER" x="94" y="76"/>
         <element name="R39" library="rtd2660_board" package="0603" value="1k" x="105.35" y="33"/>
         <element name="R40" library="rtd2660_board" package="0603" value="10k" x="79.65" y="36.9"/>
-        <element name="R41" library="rtd2660_board" package="0603" value="1k" x="82.95" y="36.9"/>
-        <element name="C44" library="rtd2660_board" package="0603" value="DNP 1uF" x="86.25" y="36.9"/>
+        <element name="R41" library="rtd2660_board" package="0603" value="10k" x="82.95" y="36.9"/>
+        <element name="R42" library="rtd2660_board" package="0603" value="7.5k" x="86.25" y="36.9"/>
+        <element name="C44" library="rtd2660_board" package="0603" value="1uF" x="89.55" y="36.9"/>
       </elements>
       <signals>
         <signal name="+12V">
@@ -810,6 +811,7 @@
           <contactref element="C44" pad="1"/>
           <contactref element="J6" pad="4"/>
           <contactref element="R41" pad="2"/>
+          <contactref element="R42" pad="1"/>
         </signal>
         <signal name="BL_ON">
           <contactref element="R39" pad="1"/>
@@ -920,6 +922,7 @@
           <contactref element="R3" pad="2"/>
           <contactref element="R38" pad="2"/>
           <contactref element="R40" pad="2"/>
+          <contactref element="R42" pad="2"/>
           <contactref element="R5" pad="2"/>
           <contactref element="U1" pad="107"/>
           <contactref element="U1" pad="11"/>

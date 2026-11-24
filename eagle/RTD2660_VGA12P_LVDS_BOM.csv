@@ -9,7 +9,7 @@ Qty,Value,Package,Description,Fit,References
 1,4.7uF,0805,Ceramic capacitor 0805,yes,C29
 6,47nF,0603,Ceramic capacitor 0603,yes,C31 C32 C33 C34 C35 C36
 1,1nF,0603,Ceramic capacitor 0603,yes,C37
-1,1uF,0603,Ceramic capacitor 0603,DNP,C44
+1,1uF,0603,Ceramic capacitor 0603,yes,C44
 2,SS34,SMA,Schottky diode SMA (SS34),yes,D1 D2
 1,1N4148W,SOD123,Diode SOD-123,yes,D3
 1,2A PTC,1206,Resettable fuse 1206,yes,F1
@@ -24,8 +24,8 @@ Qty,Value,Package,Description,Fit,References
 1,GREEN,LED0603,LED 0603,yes,LED1
 1,AO3407A,SOT23,P-channel MOSFET SOT-23 (AO3401A / AO3407A),yes,Q1
 1,MMBT3904,SOT23,NPN transistor SOT-23 (MMBT3904),yes,Q2
-6,1k,0603,Resistor 0603,yes,R1 R33 R34 R36 R39 R41
-12,10k,0603,Resistor 0603,yes,R2 R5 R22 R24 R27 R28 R29 R30 R32 R35 R38 R40
+5,1k,0603,Resistor 0603,yes,R1 R33 R34 R36 R39
+13,10k,0603,Resistor 0603,yes,R2 R5 R22 R24 R27 R28 R29 R30 R32 R35 R38 R40 R41
 1,1k 1%,0603,Resistor 0603,yes,R3
 1,27k,0603,Resistor 0603,yes,R4
 9,33R,0603,Resistor 0603,yes,R6 R7 R8 R12 R13 R15 R16 R18 R19
@@ -34,6 +34,7 @@ Qty,Value,Package,Description,Fit,References
 1,470R,0603,Resistor 0603,yes,R20
 5,100R,0603,Resistor 0603,yes,R21 R23 R25 R26 R31
 1,4.7k,0603,Resistor 0603,yes,R37
+1,7.5k,0603,Resistor 0603,yes,R42
 1,RTD2660,LQFP128-14X20-EP,"Realtek RTD2660 flat panel display controller, 128-pin E-PAD LQFP 14 x 20 mm",yes,U1
 1,LM2596S-5.0,TO263-5,"LM2596S buck regulator, TO-263-5 (tab = GND)",yes,U2
 3,AMS1117-3.3,SOT223,"AMS1117 LDO, SOT-223 (tab = VOUT)",yes,U3 U4 U8

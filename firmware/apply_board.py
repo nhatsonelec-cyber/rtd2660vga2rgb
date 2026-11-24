@@ -80,15 +80,15 @@ PCB_SBIT = {
 PANELS = {
     "LVDS": dict(
         template="PNL_A089SW01.h", guard="_PNL_LVDS_A089SW01", name="_PNL_VGA12P_LVDS", id=20,
-        comment="Generic 1024x768 LVDS, single port, 6-bit (VESA 1024x768@60, 65 MHz)",
+        comment="7 inch 1024x600 IPS LVDS, single port, 24-bit (20-pin, Huadi), 51.2 MHz",
         defines={
             "_PANEL_LR_UD_FUNC": "_OFF", "_OUTPUT_BUS": "_PANEL_LVDS",
-            "_DISP_BIT": "_DISP_18_BIT", "_DISP_EO_SWAP": "0", "_DISP_RB_SWAP": "0",
+            "_DISP_BIT": "_DISP_24_BIT", "_DISP_EO_SWAP": "0", "_DISP_RB_SWAP": "0",
             "_DISP_ML_SWAP": "0", "_DISPLAY_PORT": "_DISP_SINGLE_PORT",
-            "_DISP_WID": "1024", "_DISP_LEN": "768",
-            "_DH_ACT_STA_POS": "296", "_DV_ACT_STA_POS": "35",
-            "_STD_DH_TOTAL": "1344", "_STD_DV_TOTAL": "806",
-            "_HSYNC_WIDTH": "136", "_VSYNC_HEIGHT": "6",
+            "_DISP_WID": "1024", "_DISP_LEN": "600",
+            "_DH_ACT_STA_POS": "160", "_DV_ACT_STA_POS": "23",
+            "_STD_DH_TOTAL": "1344", "_STD_DV_TOTAL": "635",
+            "_HSYNC_WIDTH": "20", "_VSYNC_HEIGHT": "3",
         }),
     "RGB40": dict(
         template="PNL_AT102TN03.h", guard="_PNL_AT102TN03", name="_PNL_VGA12P_RGB40", id=21,

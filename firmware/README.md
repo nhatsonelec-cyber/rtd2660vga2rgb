@@ -45,7 +45,7 @@ Màn hình mặc định của từng phiên bản:
 
 | Phiên bản | Màn | Độ phân giải | Tổng H x V | Xung pixel |
 |---|---|---|---|---|
-| LVDS | LVDS chung, 1 kênh, 6 bit | 1024 x 768 | 1344 x 806 | 65 MHz |
+| LVDS | 7" IPS 20 chân, 1 kênh, 24 bit | 1024 x 600 | 1344 x 635 | 51.2 MHz |
 | RGB40 | AT043TN24, TTL 24 bit | 480 x 272 | 525 x 286 | 9 MHz |
 | RGB50 | AT070TN90/92, TTL 24 bit | 800 x 480 | 1056 x 525 | 33.3 MHz |
 
@@ -72,6 +72,7 @@ Các giá trị cần sửa là `_DISP_WID`, `_DISP_LEN`, `_STD_DH_TOTAL`, `_STD
 | Màn LVDS màu nhạt hoặc sai | `_LVDS_MAP` đổi giữa `_LVDS_MAP1` và `_LVDS_MAP2` |
 | Hình rung, chữ nhòe ở màn TTL | `_TTL_DCLK_INVERT` đổi giữa `_ENABLE` và `_DISABLE` |
 | Hình bị lệch | `_DH_ACT_STA_POS`, `_DV_ACT_STA_POS` |
+| Màn LVDS tối hoàn toàn dù đèn nền sáng | `_DISP_EO_SWAP` thành `(1 << 6)` để xuất ra các cặp O |
 
 ## Đã kiểm tra những gì
 

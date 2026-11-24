@@ -252,11 +252,16 @@ def build(variant, lib):
                                        "4": "BL_ADJ", "5": "GND", "6": "GND"}, sh_out, g, name="J6")
         b.R("1k", "BL_ON", "BL_ON_OUT", sh_out, g)
         b.R("10k", "BL_ON_OUT", "GND", sh_out, g)
-        b.R("1k", "BL_PWM", "BL_ADJ", sh_out, g)
-        b.C("1uF", "BL_ADJ", "GND", sh_out, g, dnp=True)
+        # PWM -> DC 0..1.41 V for panels with analog dimming (e.g. 7" 1024x600 LVDS, 0.7-1.4 V)
+        b.R("10k", "BL_PWM", "BL_ADJ", sh_out, g)
+        b.R("7.5k", "BL_ADJ", "GND", sh_out, g)
+        b.C("1uF", "BL_ADJ", "GND", sh_out, g)
         d.notes[sh_out] += [
             "JP1 selects panel voltage: 1-2 = 3.3V, 3-4 = 5V, 5-6 = 12V. Fit ONE jumper only.",
-            "J6 inverter / LED driver: 1,2 = +12V, 3 = BL_ON, 4 = ADJ (PWM, or DC with C fitted), 5,6 = GND.",
+            "J6 backlight: 1,2 = +12V (VLED), 3 = BL_ON (LED_EN), 4 = ADJ, 5,6 = GND.",
+            "ADJ = filtered PWM, 0 to 1.41 V DC (10k / 7.5k / 1uF). For a 3.3 V PWM input inverter:",
+            "fit 1k instead of 10k and leave 7.5k and 1uF unfitted.",
+            "Single-port LVDS comes out on the E pairs (J5 pins 19-30); O pairs are unused.",
             "Firmware: DISP_TYPE = LVDS (CR8C-00[1:0] = 01).",
         ]
         return d

@@ -98,6 +98,28 @@ Chân 12 (+5V từ mainboard) không dùng. J3 (GND, SDA, SCL) dùng để nạp
 | 29 | LVDS_E3- |
 | 30 | LVDS_E3+ |
 
+### Cáp cho màn 7" 1024x600 LVDS 20 chân (IPS, 24 bit)
+
+Màn dùng LVDS 1 kênh. Ở chế độ 1 kênh, RTD2660 xuất trên **các cặp E** (J5 chân 19-30), các cặp O không dùng.
+Cắm jumper JP1 ở vị trí 1-2 để cấp VDD 3.3 V.
+
+| Chân màn | Tín hiệu màn | Nối vào board |
+|---|---|---|
+| 1, 2 | VDD 3.3 V | J5 chân 1, 2, 3 (VLCD) |
+| 3 | LED_EN | J6 chân 3 (BL_ON) |
+| 4, 7, 10, 13, 16 | GND | J5 chân 4, 5, 6, 13, 14, 25, 26 |
+| 5 / 6 | RXIN0- / RXIN0+ | J5 chân 19 / 20 (E0- / E0+) |
+| 8 / 9 | RXIN1- / RXIN1+ | J5 chân 21 / 22 (E1- / E1+) |
+| 11 / 12 | RXIN2- / RXIN2+ | J5 chân 23 / 24 (E2- / E2+) |
+| 14 / 15 | CLK- / CLK+ | J5 chân 27 / 28 (EC- / EC+) |
+| 17 / 18 | RXIN3- / RXIN3+ | J5 chân 29 / 30 (E3- / E3+) |
+| 19 | PWM (độ sáng DC 0.7-1.4 V) | J6 chân 4 (ADJ) |
+| 20 | VLED 5-12 V | J6 chân 1 hoặc 2 (+12 V) |
+
+Dây LVDS phải đi theo cặp xoắn: mỗi cặp - và + đi cùng nhau.
+Chân ADJ trên J6 ra điện áp DC từ 0 đến 1.41 V. Điện áp này lấy từ xung PWM qua bộ lọc 10k / 7.5k / 1 µF.
+Nếu dùng inverter nhận PWM 3.3 V, thay 10k bằng 1k và bỏ 7.5k cùng tụ 1 µF.
+
 **J5 - FPC 40P (bản RGB40)**
 
 | Chân | Tín hiệu |
@@ -202,7 +224,7 @@ Các đầu nối khác:
 
 - **J1, nguồn vào 12 V:** 1 = +12V, 2 = GND. Có cầu chì PTC 2 A và diode chống ngược.
 - **J4, phím và IR (1x8):** 1 +3V3, 2 GND, 3 KEY_AD0, 4 KEY_AD1, 5 IR, 6 LED_G, 7 LED_R, 8 +5V.
-- **J6, bản LVDS, inverter/LED driver (1x6):** 1-2 +12V, 3 BL_ON, 4 ADJ (PWM), 5-6 GND.
+- **J6, bản LVDS, đèn nền (1x6):** 1-2 +12V, 3 BL_ON, 4 ADJ (DC 0-1.41 V từ PWM), 5-6 GND.
 - **J6, bản RGB40, cảm ứng điện trở (1x4):** XR, YD, XL, YU.
 - **JP1, bản LVDS:** chọn điện áp panel. Nối 1-2 cho 3.3 V, 3-4 cho 5 V, 5-6 cho 12 V. Chỉ cắm MỘT jumper.
 

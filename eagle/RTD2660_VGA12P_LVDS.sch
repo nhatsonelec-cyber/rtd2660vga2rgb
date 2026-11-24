@@ -2274,8 +2274,9 @@
         <part name="J6" library="rtd2660_board" deviceset="HDR-1X6" device="" value="INVERTER"/>
         <part name="R39" library="rtd2660_board" deviceset="R-0603" device="" value="1k"/>
         <part name="R40" library="rtd2660_board" deviceset="R-0603" device="" value="10k"/>
-        <part name="R41" library="rtd2660_board" deviceset="R-0603" device="" value="1k"/>
-        <part name="C44" library="rtd2660_board" deviceset="C-0603" device="" value="DNP 1uF"/>
+        <part name="R41" library="rtd2660_board" deviceset="R-0603" device="" value="10k"/>
+        <part name="R42" library="rtd2660_board" deviceset="R-0603" device="" value="7.5k"/>
+        <part name="C44" library="rtd2660_board" deviceset="C-0603" device="" value="1uF"/>
       </parts>
       <sheets>
         <sheet>
@@ -4033,8 +4034,11 @@
             <text x="75.0456" y="-17.78" size="2.54" layer="97">Panel power</text>
             <text x="0" y="-116.84" size="2.54" layer="97">Backlight header</text>
             <text x="0" y="-170.18" size="2.1844" layer="97">JP1 selects panel voltage: 1-2 = 3.3V, 3-4 = 5V, 5-6 = 12V. Fit ONE jumper only.</text>
-            <text x="0" y="-175.26" size="2.1844" layer="97">J6 inverter / LED driver: 1,2 = +12V, 3 = BL_ON, 4 = ADJ (PWM, or DC with C fitted), 5,6 = GND.</text>
-            <text x="0" y="-177.8" size="2.1844" layer="97">Firmware: DISP_TYPE = LVDS (CR8C-00[1:0] = 01).</text>
+            <text x="0" y="-175.26" size="2.1844" layer="97">J6 backlight: 1,2 = +12V (VLED), 3 = BL_ON (LED_EN), 4 = ADJ, 5,6 = GND.</text>
+            <text x="0" y="-177.8" size="2.1844" layer="97">ADJ = filtered PWM, 0 to 1.41 V DC (10k / 7.5k / 1uF). For a 3.3 V PWM input inverter:</text>
+            <text x="0" y="-182.88" size="2.1844" layer="97">fit 1k instead of 10k and leave 7.5k and 1uF unfitted.</text>
+            <text x="0" y="-185.42" size="2.1844" layer="97">Single-port LVDS comes out on the E pairs (J5 pins 19-30); O pairs are unused.</text>
+            <text x="0" y="-190.5" size="2.1844" layer="97">Firmware: DISP_TYPE = LVDS (CR8C-00[1:0] = 01).</text>
           </plain>
           <instances>
             <instance part="J5" gate="G$1" x="30.48" y="-27.94"/>
@@ -4054,7 +4058,8 @@
             <instance part="R39" gate="G$1" x="60.96" y="-124.46"/>
             <instance part="R40" gate="G$1" x="119.38" y="-124.46"/>
             <instance part="R41" gate="G$1" x="160.02" y="-124.46"/>
-            <instance part="C44" gate="G$1" x="22.86" y="-154.94"/>
+            <instance part="R42" gate="G$1" x="22.86" y="-152.4"/>
+            <instance part="C44" gate="G$1" x="63.5" y="-154.94"/>
           </instances>
           <nets>
             <net name="+12V" class="0">
@@ -4125,9 +4130,14 @@
                 <label x="170.18" y="-124.46" size="1.778" layer="95"/>
               </segment>
               <segment>
+                <pinref part="R42" gate="G$1" pin="1"/>
+                <wire x1="17.78" y1="-152.4" x2="12.7" y2="-152.4" width="0.1524" layer="91"/>
+                <label x="12.7" y="-152.4" size="1.778" layer="95" rot="R180"/>
+              </segment>
+              <segment>
                 <pinref part="C44" gate="G$1" pin="1"/>
-                <wire x1="17.78" y1="-154.94" x2="12.7" y2="-154.94" width="0.1524" layer="91"/>
-                <label x="12.7" y="-154.94" size="1.778" layer="95" rot="R180"/>
+                <wire x1="58.42" y1="-154.94" x2="53.34" y2="-154.94" width="0.1524" layer="91"/>
+                <label x="53.34" y="-154.94" size="1.778" layer="95" rot="R180"/>
               </segment>
             </net>
             <net name="BL_ON" class="0">
@@ -4248,9 +4258,14 @@
                 <label x="129.54" y="-124.46" size="1.778" layer="95"/>
               </segment>
               <segment>
+                <pinref part="R42" gate="G$1" pin="2"/>
+                <wire x1="27.94" y1="-152.4" x2="33.02" y2="-152.4" width="0.1524" layer="91"/>
+                <label x="33.02" y="-152.4" size="1.778" layer="95"/>
+              </segment>
+              <segment>
                 <pinref part="C44" gate="G$1" pin="2"/>
-                <wire x1="27.94" y1="-154.94" x2="33.02" y2="-154.94" width="0.1524" layer="91"/>
-                <label x="33.02" y="-154.94" size="1.778" layer="95"/>
+                <wire x1="68.58" y1="-154.94" x2="73.66" y2="-154.94" width="0.1524" layer="91"/>
+                <label x="73.66" y="-154.94" size="1.778" layer="95"/>
               </segment>
             </net>
             <net name="LVDS_E0+" class="0">
