@@ -1,0 +1,47 @@
+Qty,Value,Package,Description,Fit,References
+1,220uF/25V,CPOL-D8,"Electrolytic capacitor, radial D8",yes,C1
+1,10uF/25V,1206,Ceramic capacitor 1206,yes,C2
+1,220uF/10V,CPOL-D8,"Electrolytic capacitor, radial D8",yes,C3
+11,10uF,0805,Ceramic capacitor 0805,yes,C4 C5 C7 C9 C11 C16 C18 C22 C26 C40 C43
+5,22uF,1206,Ceramic capacitor 1206,yes,C6 C8 C10 C12 C41
+12,100nF,0603,Ceramic capacitor 0603,yes,C13 C14 C15 C17 C19 C20 C21 C23 C24 C25 C30 C42
+4,22pF,0603,Ceramic capacitor 0603,yes,C27 C28 C38 C39
+1,4.7uF,0805,Ceramic capacitor 0805,yes,C29
+6,47nF,0603,Ceramic capacitor 0603,yes,C31 C32 C33 C34 C35 C36
+1,1nF,0603,Ceramic capacitor 0603,yes,C37
+1,4.7uF/50V,1206,Ceramic capacitor 1206,yes,C44
+3,SS34,SMA,Schottky diode SMA (SS34),yes,D1 D2 D4
+1,1N4148W,SOD123,Diode SOD-123,yes,D3
+1,MMSZ 24V,SOD123,Zener diode SOD-123,yes,D5
+1,BAT54,SOT23,"Schottky diode BAT54, SOT-23 (pin 2 NC)",yes,D6
+1,2A PTC,1206,Resettable fuse 1206,yes,F1
+1,12V IN,HDR1X2-2.54,1 x 2 pin header 2.54 mm,yes,J1
+1,VGA 12P 2.54,HDR1X12-2.54,1 x 12 pin header 2.54 mm,yes,J2
+1,ISP DDC,HDR1X3-2.54,1 x 3 pin header 2.54 mm,yes,J3
+1,KEY/IR,HDR1X8-2.54,1 x 8 pin header 2.54 mm,yes,J4
+1,FPC 40P 0.5mm,FPC40-0.5,40-pin 0.5 mm FPC connector for TTL RGB panel,yes,J5
+1,TOUCH,HDR1X4-2.54,1 x 4 pin header 2.54 mm,yes,J6
+1,33uH/3A,IND-12X12,Power inductor 12 x 12 mm,yes,L1
+1,22uH/1A,IND-4X4,Power inductor 4 x 4 mm,yes,L2
+1,GREEN,LED0603,LED 0603,yes,LED1
+1,AO3401A,SOT23,P-channel MOSFET SOT-23 (AO3401A / AO3407A),yes,Q1
+1,MMBT3904,SOT23,NPN transistor SOT-23 (MMBT3904),yes,Q2
+5,1k,0603,Resistor 0603,yes,R1 R33 R34 R38 R42
+13,10k,0603,Resistor 0603,yes,R2 R5 R22 R24 R27 R28 R29 R30 R32 R36 R37 R40 R43
+1,1k 1%,0603,Resistor 0603,yes,R3
+1,27k,0603,Resistor 0603,yes,R4
+10,33R,0603,Resistor 0603,yes,R6 R7 R8 R12 R13 R15 R16 R18 R19 R35
+2,33R,0603,Resistor 0603,DNP,R9 R10
+3,75R 1%,0603,Resistor 0603,yes,R11 R14 R17
+1,470R,0603,Resistor 0603,yes,R20
+5,100R,0603,Resistor 0603,yes,R21 R23 R25 R26 R31
+1,4.7k,0603,Resistor 0603,yes,R39
+1,30R 1%,0603,Resistor 0603,yes,R41
+1,100k,0603,Resistor 0603,yes,R44
+1,RTD2660,LQFP128-14X20-EP,"Realtek RTD2660 flat panel display controller, 128-pin E-PAD LQFP 14 x 20 mm",yes,U1
+1,LM2596S-5.0,TO263-5,"LM2596S buck regulator, TO-263-5 (tab = GND)",yes,U2
+3,AMS1117-3.3,SOT223,"AMS1117 LDO, SOT-223 (tab = VOUT)",yes,U3 U4 U8
+2,AMS1117-1.8,SOT223,"AMS1117 LDO, SOT-223 (tab = VOUT)",yes,U5 U6
+1,W25Q40,SOIC8,"SPI NOR flash 25-series, SOIC-8 (W25Q40 / MX25L4006)",yes,U7
+1,MT3608,SOT23-6,"MT3608 2 A boost converter, SOT-23-6, VFB = 0.6 V",yes,U9
+1,14.31818MHz,HC49SMD,Crystal HC-49/US SMD,yes,Y1
