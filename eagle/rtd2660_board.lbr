@@ -262,6 +262,35 @@
           <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
           <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
         </package>
+        <package name="HDR1X20-2.0">
+          <description>1 x 20 pin header, 2.0 mm pitch (LVDS panel cable)</description>
+          <wire x1="-1" y1="-1" x2="39" y2="-1" width="0.2" layer="21"/>
+          <wire x1="39" y1="-1" x2="39" y2="1" width="0.2" layer="21"/>
+          <wire x1="39" y1="1" x2="-1" y2="1" width="0.2" layer="21"/>
+          <wire x1="-1" y1="1" x2="-1" y2="-1" width="0.2" layer="21"/>
+          <pad name="1" x="0" y="0" drill="0.8" diameter="1.4" shape="square"/>
+          <pad name="2" x="2" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="3" x="4" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="4" x="6" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="5" x="8" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="6" x="10" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="7" x="12" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="8" x="14" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="9" x="16" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="10" x="18" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="11" x="20" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="12" x="22" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="13" x="24" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="14" x="26" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="15" x="28" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="16" x="30" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="17" x="32" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="18" x="34" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="19" x="36" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="20" x="38" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <text x="-1" y="1.6" size="1" layer="25">&gt;NAME</text>
+          <text x="-1" y="0.1" size="1" layer="27">&gt;VALUE</text>
+        </package>
         <package name="HDR1X3-2.54">
           <description>1 x 3 pin header, 2.54 mm pitch</description>
           <wire x1="-1.27" y1="-1.27" x2="6.35" y2="-1.27" width="0.2" layer="21"/>
@@ -273,6 +302,19 @@
           <pad name="3" x="5.08" y="0" drill="1" diameter="1.7" shape="round"/>
           <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
           <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
+        </package>
+        <package name="HDR1X4-2.0">
+          <description>1 x 4 pin header, 2.0 mm pitch (backlight)</description>
+          <wire x1="-1" y1="-1" x2="7" y2="-1" width="0.2" layer="21"/>
+          <wire x1="7" y1="-1" x2="7" y2="1" width="0.2" layer="21"/>
+          <wire x1="7" y1="1" x2="-1" y2="1" width="0.2" layer="21"/>
+          <wire x1="-1" y1="1" x2="-1" y2="-1" width="0.2" layer="21"/>
+          <pad name="1" x="0" y="0" drill="0.8" diameter="1.4" shape="square"/>
+          <pad name="2" x="2" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="3" x="4" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <pad name="4" x="6" y="0" drill="0.8" diameter="1.4" shape="round"/>
+          <text x="-1" y="1.6" size="1" layer="25">&gt;NAME</text>
+          <text x="-1" y="0.1" size="1" layer="27">&gt;VALUE</text>
         </package>
         <package name="HDR1X4-2.54">
           <description>1 x 4 pin header, 2.54 mm pitch</description>
@@ -722,6 +764,46 @@
           <pin name="10" x="-10.16" y="-22.86" length="middle" direction="pas" visible="pin"/>
           <pin name="11" x="-10.16" y="-25.4" length="middle" direction="pas" visible="pin"/>
           <pin name="12" x="-10.16" y="-27.94" length="middle" direction="pas" visible="pin"/>
+        </symbol>
+        <symbol name="CONN-1X20">
+          <wire x1="-5.08" y1="-50.8" x2="5.08" y2="-50.8" width="0.254" layer="94"/>
+          <wire x1="5.08" y1="-50.8" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+          <wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+          <wire x1="-5.08" y1="2.54" x2="-5.08" y2="-50.8" width="0.254" layer="94"/>
+          <text x="-5.08" y="3.302" size="1.778" layer="95">&gt;NAME</text>
+          <text x="-5.08" y="-53.34" size="1.778" layer="96">&gt;VALUE</text>
+          <pin name="1" x="-10.16" y="0" length="middle" direction="pas" visible="pin"/>
+          <pin name="2" x="-10.16" y="-2.54" length="middle" direction="pas" visible="pin"/>
+          <pin name="3" x="-10.16" y="-5.08" length="middle" direction="pas" visible="pin"/>
+          <pin name="4" x="-10.16" y="-7.62" length="middle" direction="pas" visible="pin"/>
+          <pin name="5" x="-10.16" y="-10.16" length="middle" direction="pas" visible="pin"/>
+          <pin name="6" x="-10.16" y="-12.7" length="middle" direction="pas" visible="pin"/>
+          <pin name="7" x="-10.16" y="-15.24" length="middle" direction="pas" visible="pin"/>
+          <pin name="8" x="-10.16" y="-17.78" length="middle" direction="pas" visible="pin"/>
+          <pin name="9" x="-10.16" y="-20.32" length="middle" direction="pas" visible="pin"/>
+          <pin name="10" x="-10.16" y="-22.86" length="middle" direction="pas" visible="pin"/>
+          <pin name="11" x="-10.16" y="-25.4" length="middle" direction="pas" visible="pin"/>
+          <pin name="12" x="-10.16" y="-27.94" length="middle" direction="pas" visible="pin"/>
+          <pin name="13" x="-10.16" y="-30.48" length="middle" direction="pas" visible="pin"/>
+          <pin name="14" x="-10.16" y="-33.02" length="middle" direction="pas" visible="pin"/>
+          <pin name="15" x="-10.16" y="-35.56" length="middle" direction="pas" visible="pin"/>
+          <pin name="16" x="-10.16" y="-38.1" length="middle" direction="pas" visible="pin"/>
+          <pin name="17" x="-10.16" y="-40.64" length="middle" direction="pas" visible="pin"/>
+          <pin name="18" x="-10.16" y="-43.18" length="middle" direction="pas" visible="pin"/>
+          <pin name="19" x="-10.16" y="-45.72" length="middle" direction="pas" visible="pin"/>
+          <pin name="20" x="-10.16" y="-48.26" length="middle" direction="pas" visible="pin"/>
+        </symbol>
+        <symbol name="CONN-1X4">
+          <wire x1="-5.08" y1="-10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
+          <wire x1="5.08" y1="-10.16" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+          <wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+          <wire x1="-5.08" y1="2.54" x2="-5.08" y2="-10.16" width="0.254" layer="94"/>
+          <text x="-5.08" y="3.302" size="1.778" layer="95">&gt;NAME</text>
+          <text x="-5.08" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+          <pin name="1" x="-10.16" y="0" length="middle" direction="pas" visible="pin"/>
+          <pin name="2" x="-10.16" y="-2.54" length="middle" direction="pas" visible="pin"/>
+          <pin name="3" x="-10.16" y="-5.08" length="middle" direction="pas" visible="pin"/>
+          <pin name="4" x="-10.16" y="-7.62" length="middle" direction="pas" visible="pin"/>
         </symbol>
         <symbol name="CONN-2">
           <wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
@@ -1625,6 +1707,41 @@
             </device>
           </devices>
         </deviceset>
+        <deviceset name="HDR-1X20-2.0" prefix="J" uservalue="yes">
+          <description>1 x 20 pin header 2.0 mm, LVDS panel connector</description>
+          <gates>
+            <gate name="G$1" symbol="CONN-1X20" x="0" y="0"/>
+          </gates>
+          <devices>
+            <device name="" package="HDR1X20-2.0">
+              <connects>
+                <connect gate="G$1" pin="1" pad="1"/>
+                <connect gate="G$1" pin="10" pad="10"/>
+                <connect gate="G$1" pin="11" pad="11"/>
+                <connect gate="G$1" pin="12" pad="12"/>
+                <connect gate="G$1" pin="13" pad="13"/>
+                <connect gate="G$1" pin="14" pad="14"/>
+                <connect gate="G$1" pin="15" pad="15"/>
+                <connect gate="G$1" pin="16" pad="16"/>
+                <connect gate="G$1" pin="17" pad="17"/>
+                <connect gate="G$1" pin="18" pad="18"/>
+                <connect gate="G$1" pin="19" pad="19"/>
+                <connect gate="G$1" pin="2" pad="2"/>
+                <connect gate="G$1" pin="20" pad="20"/>
+                <connect gate="G$1" pin="3" pad="3"/>
+                <connect gate="G$1" pin="4" pad="4"/>
+                <connect gate="G$1" pin="5" pad="5"/>
+                <connect gate="G$1" pin="6" pad="6"/>
+                <connect gate="G$1" pin="7" pad="7"/>
+                <connect gate="G$1" pin="8" pad="8"/>
+                <connect gate="G$1" pin="9" pad="9"/>
+              </connects>
+              <technologies>
+                <technology name=""/>
+              </technologies>
+            </device>
+          </devices>
+        </deviceset>
         <deviceset name="HDR-1X3" prefix="J" uservalue="yes">
           <description>1 x 3 pin header 2.54 mm</description>
           <gates>
@@ -1650,6 +1767,25 @@
           </gates>
           <devices>
             <device name="" package="HDR1X4-2.54">
+              <connects>
+                <connect gate="G$1" pin="1" pad="1"/>
+                <connect gate="G$1" pin="2" pad="2"/>
+                <connect gate="G$1" pin="3" pad="3"/>
+                <connect gate="G$1" pin="4" pad="4"/>
+              </connects>
+              <technologies>
+                <technology name=""/>
+              </technologies>
+            </device>
+          </devices>
+        </deviceset>
+        <deviceset name="HDR-1X4-2.0" prefix="J" uservalue="yes">
+          <description>1 x 4 pin header 2.0 mm, backlight</description>
+          <gates>
+            <gate name="G$1" symbol="CONN-1X4" x="0" y="0"/>
+          </gates>
+          <devices>
+            <device name="" package="HDR1X4-2.0">
               <connects>
                 <connect gate="G$1" pin="1" pad="1"/>
                 <connect gate="G$1" pin="2" pad="2"/>

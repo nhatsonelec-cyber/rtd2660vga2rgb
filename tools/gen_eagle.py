@@ -16,7 +16,7 @@ import parts                                    # noqa: E402
 import circuit                                  # noqa: E402
 
 EAGLE_VERSION = "7.7.0"
-VARIANTS = ("LVDS", "RGB40", "RGB50")
+VARIANTS = ("LVDS",)   # RGB40 / RGB50 kept in circuit.py, not generated for now
 BOARD_W, BOARD_H = 120.0, 80.0
 
 
@@ -192,7 +192,7 @@ def zones(variant):
     z = {
         "12V input": [(8, 2, 32, 22)],
         "5V buck": [(30, 2, 82, 22)],
-        "LDOs": [(82, 2, W - 7, 22)],
+        "LDOs": [(80, 2, W - 7, 25)],
         "Decoupling": [(46, 22, 76, 34.5), (47, 60, 74, 66)],
         "Clock / reset / bias": [(33, 58, 47, 77), (38, 40, 50, 57)],
         "SPI flash": [(47, 66, 76, 77)],
@@ -201,8 +201,8 @@ def zones(variant):
         "Keypad / IR": [(30, 70, 33, 77), (8, 70, 30, 72.5)],
         "VGA 12P header": [],
     }
-    out_zone = [(78, 23, W - 10, 70), (76, 70, W - 32, 77)]
-    for g in ("LVDS 2x15 2.0mm", "Panel power", "Backlight header", "RGB 40P connector",
+    out_zone = [(78, 26, W - 9, 70), (76, 70, W - 10, 77)]
+    for g in ("LVDS 20P 2.0mm", "Panel power", "Backlight control", "RGB 40P connector",
               "RGB 50P connector", "LED backlight driver", "Panel straps",
               "Panel bias AVDD VGH VGL VCOM"):
         z[g] = out_zone
@@ -228,8 +228,8 @@ def place_board(d, variant):
     W, H = BOARD_W, BOARD_H
     fixed = dict(FIXED)
     if variant == "LVDS":
-        fixed["J5"] = (W - 5.5, 26, 90)
-        fixed["J6"] = (W - 26, 76, 0)
+        fixed["J5"] = (W - 3.5, 22, 90)
+        fixed["J6"] = (W - 3.5, 64, 90)
     else:
         fixed["J5"] = (W - 3.5, 47, 270)
         if "J6" in d.parts:

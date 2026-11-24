@@ -12,14 +12,19 @@ VGA12_PINOUT = {
     7: "VGA_HS", 8: "VGA_VS", 9: "GND", 10: "VGA_SDA", 11: "VGA_SCL", 12: "VGA_5V",
 }
 
-# 2 x 15 pin 2.0 mm LVDS header (common pinout of LCD controller boards).
-LVDS30_PINOUT = {
-    1: "VLCD", 2: "VLCD", 3: "VLCD", 4: "GND", 5: "GND", 6: "GND",
-    7: "LVDS_O0-", 8: "LVDS_O0+", 9: "LVDS_O1-", 10: "LVDS_O1+", 11: "LVDS_O2-", 12: "LVDS_O2+",
-    13: "GND", 14: "GND", 15: "LVDS_OC-", 16: "LVDS_OC+", 17: "LVDS_O3-", 18: "LVDS_O3+",
-    19: "LVDS_E0-", 20: "LVDS_E0+", 21: "LVDS_E1-", 22: "LVDS_E1+", 23: "LVDS_E2-", 24: "LVDS_E2+",
-    25: "GND", 26: "GND", 27: "LVDS_EC-", 28: "LVDS_EC+", 29: "LVDS_E3-", 30: "LVDS_E3+",
+# 1 x 20 pin 2.0 mm LVDS connector: pins 1-18 follow the 7" 1024x600 IPS LVDS panel (Huadi).
+# The panel cable brings the backlight (VLED, LED_EN, brightness, GND) out on a separate
+# 4-pin plug, so pins 19/20 are not used here; see BL4_PINOUT.
+LVDS20_PINOUT = {
+    1: "VLCD", 2: "VLCD", 3: "PNL_LED_EN", 4: "GND", 5: "LVDS_E0-", 6: "LVDS_E0+", 7: "GND",
+    8: "LVDS_E1-", 9: "LVDS_E1+", 10: "GND", 11: "LVDS_E2-", 12: "LVDS_E2+", 13: "GND",
+    14: "LVDS_EC-", 15: "LVDS_EC+", 16: "GND", 17: "LVDS_E3-", 18: "LVDS_E3+",
+    19: None, 20: None,
 }
+
+# 1 x 4 pin 2.0 mm backlight connector (white 4-pin plug of the panel cable).
+# Order is an assumption: check the cable with a multimeter (VLED / EN / PWM / GND).
+BL4_PINOUT = {1: "+12V", 2: "PNL_LED_EN", 3: "PNL_BL_ADJ", 4: "GND"}
 
 # 40-pin TTL RGB (AT043TN24 / 4.3"-7" 40P standard pinout)
 RGB40_PINOUT = {1: "LED_K", 2: "LED_A", 3: "GND", 4: "VLCD"}
@@ -96,10 +101,8 @@ def rtd_nets(variant):
               "P6.2/AADC2": "LED_R_DRV", "P6.3/AADC3": "LED_G_DRV", "P5.4/PWM2": "PANEL_ON",
               "P5.5/PWM3": "BL_ON", "P5.6/PWM4": "BL_PWM", "P3.6/IRDA": "IR_IN"})
     if variant == "LVDS":
-        lv = {"TXO0-/G0": "LVDS_O0-", "TXO0+/G1": "LVDS_O0+", "TXO1-/G2": "LVDS_O1-",
-              "TXO1+/G3": "LVDS_O1+", "TXO2-/G4": "LVDS_O2-", "TXO2+/G5": "LVDS_O2+",
-              "TXOC-/G6": "LVDS_OC-", "TXOC+/G7": "LVDS_OC+", "TXO3-/B0": "LVDS_O3-",
-              "TXO3+/B1": "LVDS_O3+", "TXE1-/R0": "LVDS_E1-", "TXE1+/R1": "LVDS_E1+",
+        # single-port LVDS uses the E pairs only (pins 86-95); O pairs (74-83) stay unused
+        lv = {"TXE1-/R0": "LVDS_E1-", "TXE1+/R1": "LVDS_E1+",
               "TXE2-/R2": "LVDS_E2-", "TXE2+/R3": "LVDS_E2+", "TXEC-/R4": "LVDS_EC-",
               "TXEC+/R5": "LVDS_EC+", "TXE3-/R6": "LVDS_E3-", "TXE3+/R7": "LVDS_E3+",
               "TXE0+/DEN": "LVDS_E0+", "TXE0-/DHS": "LVDS_E0-"}
@@ -115,7 +118,7 @@ def rtd_nets(variant):
 
 
 def build(variant, lib):
-    titles = {"LVDS": "RTD2660 VGA(12P) -> LVDS 2x15 2.0mm",
+    titles = {"LVDS": "RTD2660 VGA(12P) -> LVDS 20P 2.0mm (7in 1024x600)",
               "RGB40": "RTD2660 VGA(12P) -> TTL RGB 40P",
               "RGB50": "RTD2660 VGA(12P) -> TTL RGB 50P"}
     d = Design(titles[variant], lib)
@@ -228,41 +231,38 @@ def build(variant, lib):
 
     # ------------------------------------------------------------------ output
     if variant == "LVDS":
-        g = "LVDS 2x15 2.0mm"
-        d.add("HDR-2X15-2.0", "LVDS 2x15 2.0", {str(k): v for k, v in LVDS30_PINOUT.items()},
-              sh_out, g, name="J5")
+        g = "LVDS 20P 2.0mm"
+        d.add("HDR-1X20-2.0", "LVDS 20P 2.0", {str(k): v for k, v in LVDS20_PINOUT.items()
+                                                 if v}, sh_out, g, name="J5")
         g = "Panel power"
         d.add("AMS1117", "AMS1117-3.3", {"VIN": "+5V", "VOUT": "+3V3_PNL", "TAB": "+3V3_PNL",
                                           "GND": "GND"}, sh_out, g)
         b.C("10uF", "+5V", "GND", sh_out, g, dev="C-0805")
         b.C("22uF", "+3V3_PNL", "GND", sh_out, g, dev="C-1206")
-        d.add("HDR-2X3", "VLCD SEL", {"1": "+3V3_PNL", "2": "VLCD_IN", "3": "+5V",
-                                       "4": "VLCD_IN", "5": "+12V", "6": "VLCD_IN"},
-              sh_out, g, name="JP1")
-        d.add("PMOS-SOT23", "AO3407A", {"S": "VLCD_IN", "D": "VLCD", "G": "VLCD_G"}, sh_out, g)
-        b.R("10k", "VLCD_IN", "VLCD_G", sh_out, g)
+        d.add("PMOS-SOT23", "AO3401A", {"S": "+3V3_PNL", "D": "VLCD", "G": "VLCD_G"}, sh_out, g)
+        b.R("10k", "+3V3_PNL", "VLCD_G", sh_out, g)
         b.R("1k", "VLCD_G", "VLCD_Q", sh_out, g)
         d.add("NPN-SOT23", "MMBT3904", {"B": "PNL_ON_B", "C": "VLCD_Q", "E": "GND"}, sh_out, g)
         b.R("4.7k", "PANEL_ON", "PNL_ON_B", sh_out, g)
         b.R("10k", "PNL_ON_B", "GND", sh_out, g)
-        b.C("10uF/25V", "VLCD", "GND", sh_out, g, dev="C-1206")
+        b.C("10uF", "VLCD", "GND", sh_out, g, dev="C-0805")
         b.C("100nF", "VLCD", "GND", sh_out, g)
-        g = "Backlight header"
-        d.add("HDR-1X6", "INVERTER", {"1": "+12V", "2": "+12V", "3": "BL_ON_OUT",
-                                       "4": "BL_ADJ", "5": "GND", "6": "GND"}, sh_out, g, name="J6")
-        b.R("1k", "BL_ON", "BL_ON_OUT", sh_out, g)
-        b.R("10k", "BL_ON_OUT", "GND", sh_out, g)
-        # PWM -> DC 0..1.41 V for panels with analog dimming (e.g. 7" 1024x600 LVDS, 0.7-1.4 V)
-        b.R("10k", "BL_PWM", "BL_ADJ", sh_out, g)
-        b.R("7.5k", "BL_ADJ", "GND", sh_out, g)
-        b.C("1uF", "BL_ADJ", "GND", sh_out, g)
+        g = "Backlight control"
+        d.add("HDR-1X4-2.0", "BL 4P 2.0", {str(k): v for k, v in BL4_PINOUT.items()},
+              sh_out, g, name="J6")
+        b.R("1k", "BL_ON", "PNL_LED_EN", sh_out, g)
+        b.R("10k", "PNL_LED_EN", "GND", sh_out, g)
+        # PWM -> DC 0..1.41 V (panel brightness input 0.7-1.4 V DC)
+        b.R("10k", "BL_PWM", "PNL_BL_ADJ", sh_out, g)
+        b.R("7.5k", "PNL_BL_ADJ", "GND", sh_out, g)
+        b.C("1uF", "PNL_BL_ADJ", "GND", sh_out, g)
+        b.C("10uF/25V", "+12V", "GND", sh_out, g, dev="C-1206")
         d.notes[sh_out] += [
-            "JP1 selects panel voltage: 1-2 = 3.3V, 3-4 = 5V, 5-6 = 12V. Fit ONE jumper only.",
-            "J6 backlight: 1,2 = +12V (VLED), 3 = BL_ON (LED_EN), 4 = ADJ, 5,6 = GND.",
-            "ADJ = filtered PWM, 0 to 1.41 V DC (10k / 7.5k / 1uF). For a 3.3 V PWM input inverter:",
-            "fit 1k instead of 10k and leave 7.5k and 1uF unfitted.",
-            "Single-port LVDS comes out on the E pairs (J5 pins 19-30); O pairs are unused.",
-            "Firmware: DISP_TYPE = LVDS (CR8C-00[1:0] = 01).",
+            "J5 = 20-pin LVDS plug of the 7in 1024x600 IPS panel cable: 1,2 VDD 3.3V, 3 LED_EN, 4 GND,",
+            "5/6 RXIN0-/+, 8/9 RXIN1-/+, 11/12 RXIN2-/+, 14/15 CLK-/+, 17/18 RXIN3-/+, 7,10,13,16 GND, 19,20 NC.",
+            "J6 = 4-pin backlight plug: 1 VLED +12V, 2 LED_EN, 3 brightness DC 0-1.41V, 4 GND (check cable).",
+            "Single-port LVDS = E pairs of the RTD2660 (pins 86-95). Route as 100R differential pairs.",
+            "Firmware: LVDS, single port, 24-bit, 1024x600 (firmware/apply_board.py LVDS).",
         ]
         return d
 

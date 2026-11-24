@@ -16,10 +16,10 @@ git clone https://github.com/danyaPostfactum/RTD2660
 
 ## 2. Áp cấu hình board
 
-Chọn phiên bản đầu ra là `LVDS`, `RGB40` hoặc `RGB50`:
+Dùng phiên bản `LVDS` (màn 7" 1024x600). Cấu hình `RGB40` và `RGB50` vẫn còn trong script nhưng tạm chưa dùng.
 
 ```bash
-python3 apply_board.py RTD2660 RGB50
+python3 apply_board.py RTD2660 LVDS
 ```
 
 Script làm các việc sau:

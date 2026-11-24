@@ -371,6 +371,15 @@ def build_library():
     s23 = box_symbol("CONN-2X3", ["1", "3", "5"], ["2", "4", "6"], width=7.62)
     lib.add(Device("HDR-2X3", "JP", s23, pk, {str(i): str(i) for i in range(1, 7)},
                    "2 x 3 pin header 2.54 mm (jumper)"))
+    pk = pkg_hdr(4, 1, 2.0, "HDR1X4-2.0", "1 x 4 pin header, 2.0 mm pitch (backlight)",
+                 drill=0.8, dia=1.4)
+    lib.add(Device("HDR-1X4-2.0", "J", box_symbol("CONN-1X4", ["1", "2", "3", "4"], [], width=7.62),
+                   pk, {str(i): str(i) for i in range(1, 5)}, "1 x 4 pin header 2.0 mm, backlight"))
+    pk = pkg_hdr(20, 1, 2.0, "HDR1X20-2.0", "1 x 20 pin header, 2.0 mm pitch (LVDS panel cable)",
+                 drill=0.8, dia=1.4)
+    lib.add(Device("HDR-1X20-2.0", "J", box_symbol("CONN-1X20", [str(i) for i in range(1, 21)], [],
+                   width=7.62), pk, {str(i): str(i) for i in range(1, 21)},
+                   "1 x 20 pin header 2.0 mm, LVDS panel connector"))
     pk = pkg_hdr(15, 2, 2.0, "HDR2X15-2.0", "2 x 15 pin header, 2.0 mm pitch (LVDS)",
                  drill=0.8, dia=1.3)
     s215 = box_symbol("CONN-2X15", [str(i) for i in range(1, 31, 2)],

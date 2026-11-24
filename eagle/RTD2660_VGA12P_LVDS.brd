@@ -65,7 +65,7 @@
         <wire x1="120" y1="0" x2="120" y2="80" width="0" layer="20"/>
         <wire x1="120" y1="80" x2="0" y2="80" width="0" layer="20"/>
         <wire x1="0" y1="80" x2="0" y2="0" width="0" layer="20"/>
-        <text x="34" y="56" size="1.27" layer="21">RTD2660 VGA(12P) -&gt; LVDS 2x15 2.0mm</text>
+        <text x="34" y="56" size="1.27" layer="21">RTD2660 VGA(12P) -&gt; LVDS 20P 2.0mm (7in 1024x600)</text>
       </plain>
       <libraries>
         <library name="rtd2660_board">
@@ -157,6 +157,35 @@
               <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
               <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
             </package>
+            <package name="HDR1X20-2.0">
+              <description>1 x 20 pin header, 2.0 mm pitch (LVDS panel cable)</description>
+              <wire x1="-1" y1="-1" x2="39" y2="-1" width="0.2" layer="21"/>
+              <wire x1="39" y1="-1" x2="39" y2="1" width="0.2" layer="21"/>
+              <wire x1="39" y1="1" x2="-1" y2="1" width="0.2" layer="21"/>
+              <wire x1="-1" y1="1" x2="-1" y2="-1" width="0.2" layer="21"/>
+              <pad name="1" x="0" y="0" drill="0.8" diameter="1.4" shape="square"/>
+              <pad name="2" x="2" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="3" x="4" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="4" x="6" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="5" x="8" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="6" x="10" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="7" x="12" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="8" x="14" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="9" x="16" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="10" x="18" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="11" x="20" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="12" x="22" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="13" x="24" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="14" x="26" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="15" x="28" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="16" x="30" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="17" x="32" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="18" x="34" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="19" x="36" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="20" x="38" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <text x="-1" y="1.6" size="1" layer="25">&gt;NAME</text>
+              <text x="-1" y="0.1" size="1" layer="27">&gt;VALUE</text>
+            </package>
             <package name="HDR1X3-2.54">
               <description>1 x 3 pin header, 2.54 mm pitch</description>
               <wire x1="-1.27" y1="-1.27" x2="6.35" y2="-1.27" width="0.2" layer="21"/>
@@ -169,20 +198,18 @@
               <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
               <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
             </package>
-            <package name="HDR1X6-2.54">
-              <description>1 x 6 pin header, 2.54 mm pitch</description>
-              <wire x1="-1.27" y1="-1.27" x2="13.97" y2="-1.27" width="0.2" layer="21"/>
-              <wire x1="13.97" y1="-1.27" x2="13.97" y2="1.27" width="0.2" layer="21"/>
-              <wire x1="13.97" y1="1.27" x2="-1.27" y2="1.27" width="0.2" layer="21"/>
-              <wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.2" layer="21"/>
-              <pad name="1" x="0" y="0" drill="1" diameter="1.7" shape="square"/>
-              <pad name="2" x="2.54" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="3" x="5.08" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="4" x="7.62" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="5" x="10.16" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="6" x="12.7" y="0" drill="1" diameter="1.7" shape="round"/>
-              <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
-              <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
+            <package name="HDR1X4-2.0">
+              <description>1 x 4 pin header, 2.0 mm pitch (backlight)</description>
+              <wire x1="-1" y1="-1" x2="7" y2="-1" width="0.2" layer="21"/>
+              <wire x1="7" y1="-1" x2="7" y2="1" width="0.2" layer="21"/>
+              <wire x1="7" y1="1" x2="-1" y2="1" width="0.2" layer="21"/>
+              <wire x1="-1" y1="1" x2="-1" y2="-1" width="0.2" layer="21"/>
+              <pad name="1" x="0" y="0" drill="0.8" diameter="1.4" shape="square"/>
+              <pad name="2" x="2" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="3" x="4" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <pad name="4" x="6" y="0" drill="0.8" diameter="1.4" shape="round"/>
+              <text x="-1" y="1.6" size="1" layer="25">&gt;NAME</text>
+              <text x="-1" y="0.1" size="1" layer="27">&gt;VALUE</text>
             </package>
             <package name="HDR1X8-2.54">
               <description>1 x 8 pin header, 2.54 mm pitch</description>
@@ -198,60 +225,6 @@
               <pad name="6" x="12.7" y="0" drill="1" diameter="1.7" shape="round"/>
               <pad name="7" x="15.24" y="0" drill="1" diameter="1.7" shape="round"/>
               <pad name="8" x="17.78" y="0" drill="1" diameter="1.7" shape="round"/>
-              <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
-              <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
-            </package>
-            <package name="HDR2X15-2.0">
-              <description>2 x 15 pin header, 2.0 mm pitch (LVDS)</description>
-              <wire x1="-1" y1="-3" x2="29" y2="-3" width="0.2" layer="21"/>
-              <wire x1="29" y1="-3" x2="29" y2="1" width="0.2" layer="21"/>
-              <wire x1="29" y1="1" x2="-1" y2="1" width="0.2" layer="21"/>
-              <wire x1="-1" y1="1" x2="-1" y2="-3" width="0.2" layer="21"/>
-              <pad name="1" x="0" y="0" drill="0.8" diameter="1.3" shape="square"/>
-              <pad name="2" x="0" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="3" x="2" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="4" x="2" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="5" x="4" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="6" x="4" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="7" x="6" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="8" x="6" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="9" x="8" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="10" x="8" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="11" x="10" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="12" x="10" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="13" x="12" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="14" x="12" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="15" x="14" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="16" x="14" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="17" x="16" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="18" x="16" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="19" x="18" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="20" x="18" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="21" x="20" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="22" x="20" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="23" x="22" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="24" x="22" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="25" x="24" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="26" x="24" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="27" x="26" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="28" x="26" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="29" x="28" y="0" drill="0.8" diameter="1.3" shape="round"/>
-              <pad name="30" x="28" y="-2" drill="0.8" diameter="1.3" shape="round"/>
-              <text x="-1" y="1.6" size="1" layer="25">&gt;NAME</text>
-              <text x="-1" y="0.1" size="1" layer="27">&gt;VALUE</text>
-            </package>
-            <package name="HDR2X3-2.54">
-              <description>2 x 3 pin header, 2.54 mm pitch</description>
-              <wire x1="-1.27" y1="-3.81" x2="6.35" y2="-3.81" width="0.2" layer="21"/>
-              <wire x1="6.35" y1="-3.81" x2="6.35" y2="1.27" width="0.2" layer="21"/>
-              <wire x1="6.35" y1="1.27" x2="-1.27" y2="1.27" width="0.2" layer="21"/>
-              <wire x1="-1.27" y1="1.27" x2="-1.27" y2="-3.81" width="0.2" layer="21"/>
-              <pad name="1" x="0" y="0" drill="1" diameter="1.7" shape="square"/>
-              <pad name="2" x="0" y="-2.54" drill="1" diameter="1.7" shape="round"/>
-              <pad name="3" x="2.54" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="4" x="2.54" y="-2.54" drill="1" diameter="1.7" shape="round"/>
-              <pad name="5" x="5.08" y="0" drill="1" diameter="1.7" shape="round"/>
-              <pad name="6" x="5.08" y="-2.54" drill="1" diameter="1.7" shape="round"/>
               <text x="-1.27" y="1.87" size="1" layer="25">&gt;NAME</text>
               <text x="-1.27" y="0.37" size="1" layer="27">&gt;VALUE</text>
             </package>
@@ -534,20 +507,20 @@
         <element name="L1" library="rtd2660_board" package="IND-12X12" value="33uH/3A" x="55.2" y="8.4"/>
         <element name="C3" library="rtd2660_board" package="CPOL-D8" value="220uF/10V" x="66.5" y="6.5"/>
         <element name="C4" library="rtd2660_board" package="0805" value="10uF" x="72.95" y="3.1"/>
-        <element name="U3" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="85.7" y="6.55"/>
-        <element name="C5" library="rtd2660_board" package="0805" value="10uF" x="91.35" y="3.1"/>
-        <element name="C6" library="rtd2660_board" package="1206" value="22uF" x="96" y="3.3"/>
-        <element name="U4" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="102.4" y="6.55"/>
-        <element name="C7" library="rtd2660_board" package="0805" value="10uF" x="108.05" y="3.1"/>
-        <element name="C8" library="rtd2660_board" package="1206" value="22uF" x="84.7" y="12.4"/>
-        <element name="U5" library="rtd2660_board" package="SOT223" value="AMS1117-1.8" x="91.1" y="15.65"/>
-        <element name="C9" library="rtd2660_board" package="0805" value="10uF" x="96.75" y="12.2"/>
-        <element name="C10" library="rtd2660_board" package="1206" value="22uF" x="101.4" y="12.4"/>
-        <element name="U6" library="rtd2660_board" package="SOT223" value="AMS1117-1.8" x="107.8" y="15.65"/>
-        <element name="C11" library="rtd2660_board" package="0805" value="10uF" x="126.55" y="2.7"/>
-        <element name="C12" library="rtd2660_board" package="1206" value="22uF" x="127.3" y="5.3"/>
-        <element name="R1" library="rtd2660_board" package="0603" value="1k" x="126.25" y="7.7"/>
-        <element name="LED1" library="rtd2660_board" package="LED0603" value="GREEN" x="126.25" y="9.7"/>
+        <element name="U3" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="83.7" y="6.55"/>
+        <element name="C5" library="rtd2660_board" package="0805" value="10uF" x="89.35" y="3.1"/>
+        <element name="C6" library="rtd2660_board" package="1206" value="22uF" x="94" y="3.3"/>
+        <element name="U4" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="100.4" y="6.55"/>
+        <element name="C7" library="rtd2660_board" package="0805" value="10uF" x="106.05" y="3.1"/>
+        <element name="C8" library="rtd2660_board" package="1206" value="22uF" x="82.7" y="12.4"/>
+        <element name="U5" library="rtd2660_board" package="SOT223" value="AMS1117-1.8" x="89.1" y="15.65"/>
+        <element name="C9" library="rtd2660_board" package="0805" value="10uF" x="94.75" y="12.2"/>
+        <element name="C10" library="rtd2660_board" package="1206" value="22uF" x="99.4" y="12.4"/>
+        <element name="U6" library="rtd2660_board" package="SOT223" value="AMS1117-1.8" x="105.8" y="15.65"/>
+        <element name="C11" library="rtd2660_board" package="0805" value="10uF" x="81.95" y="21.3"/>
+        <element name="C12" library="rtd2660_board" package="1206" value="22uF" x="86.6" y="21.5"/>
+        <element name="R1" library="rtd2660_board" package="0603" value="1k" x="90.95" y="21.1"/>
+        <element name="LED1" library="rtd2660_board" package="LED0603" value="GREEN" x="94.25" y="21.1"/>
         <element name="H1" library="rtd2660_board" package="HOLE3.2" value="M3" x="3.5" y="3.5"/>
         <element name="H2" library="rtd2660_board" package="HOLE3.2" value="M3" x="116.5" y="3.5"/>
         <element name="H3" library="rtd2660_board" package="HOLE3.2" value="M3" x="3.5" y="76.5"/>
@@ -619,34 +592,33 @@
         <element name="R32" library="rtd2660_board" package="0603" value="10k" x="19.55" y="70.9"/>
         <element name="R33" library="rtd2660_board" package="0603" value="1k" x="22.85" y="70.9"/>
         <element name="R34" library="rtd2660_board" package="0603" value="1k" x="26.15" y="70.9"/>
-        <element name="J5" library="rtd2660_board" package="HDR2X15-2.0" value="LVDS 2x15 2.0" x="114.5" y="26" rot="R90"/>
-        <element name="U8" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="81.7" y="27.55"/>
-        <element name="C40" library="rtd2660_board" package="0805" value="10uF" x="87.35" y="24.1"/>
-        <element name="C41" library="rtd2660_board" package="1206" value="22uF" x="92" y="24.3"/>
-        <element name="JP1" library="rtd2660_board" package="HDR2X3-2.54" value="VLCD SEL" x="96.37" y="27.21"/>
-        <element name="Q1" library="rtd2660_board" package="SOT23" value="AO3407A" x="105.02" y="24.95"/>
-        <element name="R35" library="rtd2660_board" package="0603" value="10k" x="79.65" y="33"/>
-        <element name="R36" library="rtd2660_board" package="0603" value="1k" x="82.95" y="33"/>
-        <element name="Q2" library="rtd2660_board" package="SOT23" value="MMBT3904" x="86.5" y="34.05"/>
-        <element name="R37" library="rtd2660_board" package="0603" value="4.7k" x="90.05" y="33"/>
-        <element name="R38" library="rtd2660_board" package="0603" value="10k" x="93.35" y="33"/>
-        <element name="C42" library="rtd2660_board" package="1206" value="10uF/25V" x="97.7" y="33.4"/>
-        <element name="C43" library="rtd2660_board" package="0603" value="100nF" x="102.05" y="33"/>
-        <element name="J6" library="rtd2660_board" package="HDR1X6-2.54" value="INVERTER" x="94" y="76"/>
-        <element name="R39" library="rtd2660_board" package="0603" value="1k" x="105.35" y="33"/>
-        <element name="R40" library="rtd2660_board" package="0603" value="10k" x="79.65" y="36.9"/>
-        <element name="R41" library="rtd2660_board" package="0603" value="10k" x="82.95" y="36.9"/>
-        <element name="R42" library="rtd2660_board" package="0603" value="7.5k" x="86.25" y="36.9"/>
-        <element name="C44" library="rtd2660_board" package="0603" value="1uF" x="89.55" y="36.9"/>
+        <element name="J5" library="rtd2660_board" package="HDR1X20-2.0" value="LVDS 20P 2.0" x="116.5" y="22" rot="R90"/>
+        <element name="U8" library="rtd2660_board" package="SOT223" value="AMS1117-3.3" x="81.7" y="30.55"/>
+        <element name="C40" library="rtd2660_board" package="0805" value="10uF" x="87.35" y="27.1"/>
+        <element name="C41" library="rtd2660_board" package="1206" value="22uF" x="92" y="27.3"/>
+        <element name="Q1" library="rtd2660_board" package="SOT23" value="AO3401A" x="96.6" y="27.95"/>
+        <element name="R35" library="rtd2660_board" package="0603" value="10k" x="100.15" y="26.9"/>
+        <element name="R36" library="rtd2660_board" package="0603" value="1k" x="103.45" y="26.9"/>
+        <element name="Q2" library="rtd2660_board" package="SOT23" value="MMBT3904" x="107" y="27.95"/>
+        <element name="R37" library="rtd2660_board" package="0603" value="4.7k" x="79.65" y="36"/>
+        <element name="R38" library="rtd2660_board" package="0603" value="10k" x="82.95" y="36"/>
+        <element name="C42" library="rtd2660_board" package="0805" value="10uF" x="86.55" y="36.2"/>
+        <element name="C43" library="rtd2660_board" package="0603" value="100nF" x="90.15" y="36"/>
+        <element name="J6" library="rtd2660_board" package="HDR1X4-2.0" value="BL 4P 2.0" x="116.5" y="64" rot="R90"/>
+        <element name="R39" library="rtd2660_board" package="0603" value="1k" x="93.45" y="36"/>
+        <element name="R40" library="rtd2660_board" package="0603" value="10k" x="96.75" y="36"/>
+        <element name="R41" library="rtd2660_board" package="0603" value="10k" x="100.05" y="36"/>
+        <element name="R42" library="rtd2660_board" package="0603" value="7.5k" x="103.35" y="36"/>
+        <element name="C44" library="rtd2660_board" package="0603" value="1uF" x="106.65" y="36"/>
+        <element name="C45" library="rtd2660_board" package="1206" value="10uF/25V" x="80.7" y="38.6"/>
       </elements>
       <signals>
         <signal name="+12V">
           <contactref element="C1" pad="+"/>
           <contactref element="C2" pad="1"/>
+          <contactref element="C45" pad="1"/>
           <contactref element="D1" pad="C"/>
           <contactref element="J6" pad="1"/>
-          <contactref element="J6" pad="2"/>
-          <contactref element="JP1" pad="5"/>
           <contactref element="U2" pad="1"/>
         </signal>
         <signal name="+12V_F">
@@ -721,7 +693,8 @@
         </signal>
         <signal name="+3V3_PNL">
           <contactref element="C41" pad="1"/>
-          <contactref element="JP1" pad="1"/>
+          <contactref element="Q1" pad="2"/>
+          <contactref element="R35" pad="1"/>
           <contactref element="U8" pad="2"/>
           <contactref element="U8" pad="4"/>
         </signal>
@@ -732,7 +705,6 @@
           <contactref element="C5" pad="1"/>
           <contactref element="C7" pad="1"/>
           <contactref element="J4" pad="8"/>
-          <contactref element="JP1" pad="3"/>
           <contactref element="L1" pad="2"/>
           <contactref element="U2" pad="4"/>
           <contactref element="U3" pad="3"/>
@@ -807,20 +779,9 @@
           <contactref element="C37" pad="1"/>
           <contactref element="R20" pad="2"/>
         </signal>
-        <signal name="BL_ADJ">
-          <contactref element="C44" pad="1"/>
-          <contactref element="J6" pad="4"/>
-          <contactref element="R41" pad="2"/>
-          <contactref element="R42" pad="1"/>
-        </signal>
         <signal name="BL_ON">
           <contactref element="R39" pad="1"/>
           <contactref element="U1" pad="99"/>
-        </signal>
-        <signal name="BL_ON_OUT">
-          <contactref element="J6" pad="3"/>
-          <contactref element="R39" pad="2"/>
-          <contactref element="R40" pad="1"/>
         </signal>
         <signal name="BL_PWM">
           <contactref element="R41" pad="1"/>
@@ -887,6 +848,7 @@
           <contactref element="C42" pad="2"/>
           <contactref element="C43" pad="2"/>
           <contactref element="C44" pad="2"/>
+          <contactref element="C45" pad="2"/>
           <contactref element="C5" pad="2"/>
           <contactref element="C6" pad="2"/>
           <contactref element="C7" pad="2"/>
@@ -900,15 +862,12 @@
           <contactref element="J2" pad="9"/>
           <contactref element="J3" pad="1"/>
           <contactref element="J4" pad="2"/>
+          <contactref element="J5" pad="10"/>
           <contactref element="J5" pad="13"/>
-          <contactref element="J5" pad="14"/>
-          <contactref element="J5" pad="25"/>
-          <contactref element="J5" pad="26"/>
+          <contactref element="J5" pad="16"/>
           <contactref element="J5" pad="4"/>
-          <contactref element="J5" pad="5"/>
-          <contactref element="J5" pad="6"/>
-          <contactref element="J6" pad="5"/>
-          <contactref element="J6" pad="6"/>
+          <contactref element="J5" pad="7"/>
+          <contactref element="J6" pad="4"/>
           <contactref element="LED1" pad="C"/>
           <contactref element="Q2" pad="2"/>
           <contactref element="R11" pad="2"/>
@@ -984,88 +943,60 @@
           <contactref element="U1" pad="52"/>
         </signal>
         <signal name="LVDS_E0+">
-          <contactref element="J5" pad="20"/>
+          <contactref element="J5" pad="6"/>
           <contactref element="U1" pad="94"/>
         </signal>
         <signal name="LVDS_E0-">
-          <contactref element="J5" pad="19"/>
+          <contactref element="J5" pad="5"/>
           <contactref element="U1" pad="95"/>
         </signal>
         <signal name="LVDS_E1+">
-          <contactref element="J5" pad="22"/>
+          <contactref element="J5" pad="9"/>
           <contactref element="U1" pad="92"/>
         </signal>
         <signal name="LVDS_E1-">
-          <contactref element="J5" pad="21"/>
+          <contactref element="J5" pad="8"/>
           <contactref element="U1" pad="93"/>
         </signal>
         <signal name="LVDS_E2+">
-          <contactref element="J5" pad="24"/>
+          <contactref element="J5" pad="12"/>
           <contactref element="U1" pad="90"/>
         </signal>
         <signal name="LVDS_E2-">
-          <contactref element="J5" pad="23"/>
+          <contactref element="J5" pad="11"/>
           <contactref element="U1" pad="91"/>
         </signal>
         <signal name="LVDS_E3+">
-          <contactref element="J5" pad="30"/>
+          <contactref element="J5" pad="18"/>
           <contactref element="U1" pad="86"/>
         </signal>
         <signal name="LVDS_E3-">
-          <contactref element="J5" pad="29"/>
+          <contactref element="J5" pad="17"/>
           <contactref element="U1" pad="87"/>
         </signal>
         <signal name="LVDS_EC+">
-          <contactref element="J5" pad="28"/>
+          <contactref element="J5" pad="15"/>
           <contactref element="U1" pad="88"/>
         </signal>
         <signal name="LVDS_EC-">
-          <contactref element="J5" pad="27"/>
+          <contactref element="J5" pad="14"/>
           <contactref element="U1" pad="89"/>
-        </signal>
-        <signal name="LVDS_O0+">
-          <contactref element="J5" pad="8"/>
-          <contactref element="U1" pad="82"/>
-        </signal>
-        <signal name="LVDS_O0-">
-          <contactref element="J5" pad="7"/>
-          <contactref element="U1" pad="83"/>
-        </signal>
-        <signal name="LVDS_O1+">
-          <contactref element="J5" pad="10"/>
-          <contactref element="U1" pad="80"/>
-        </signal>
-        <signal name="LVDS_O1-">
-          <contactref element="J5" pad="9"/>
-          <contactref element="U1" pad="81"/>
-        </signal>
-        <signal name="LVDS_O2+">
-          <contactref element="J5" pad="12"/>
-          <contactref element="U1" pad="78"/>
-        </signal>
-        <signal name="LVDS_O2-">
-          <contactref element="J5" pad="11"/>
-          <contactref element="U1" pad="79"/>
-        </signal>
-        <signal name="LVDS_O3+">
-          <contactref element="J5" pad="18"/>
-          <contactref element="U1" pad="74"/>
-        </signal>
-        <signal name="LVDS_O3-">
-          <contactref element="J5" pad="17"/>
-          <contactref element="U1" pad="75"/>
-        </signal>
-        <signal name="LVDS_OC+">
-          <contactref element="J5" pad="16"/>
-          <contactref element="U1" pad="76"/>
-        </signal>
-        <signal name="LVDS_OC-">
-          <contactref element="J5" pad="15"/>
-          <contactref element="U1" pad="77"/>
         </signal>
         <signal name="PANEL_ON">
           <contactref element="R37" pad="1"/>
           <contactref element="U1" pad="98"/>
+        </signal>
+        <signal name="PNL_BL_ADJ">
+          <contactref element="C44" pad="1"/>
+          <contactref element="J6" pad="3"/>
+          <contactref element="R41" pad="2"/>
+          <contactref element="R42" pad="1"/>
+        </signal>
+        <signal name="PNL_LED_EN">
+          <contactref element="J5" pad="3"/>
+          <contactref element="J6" pad="2"/>
+          <contactref element="R39" pad="2"/>
+          <contactref element="R40" pad="1"/>
         </signal>
         <signal name="PNL_ON_B">
           <contactref element="Q2" pad="1"/>
@@ -1149,20 +1080,12 @@
           <contactref element="C43" pad="1"/>
           <contactref element="J5" pad="1"/>
           <contactref element="J5" pad="2"/>
-          <contactref element="J5" pad="3"/>
           <contactref element="Q1" pad="3"/>
         </signal>
         <signal name="VLCD_G">
           <contactref element="Q1" pad="1"/>
           <contactref element="R35" pad="2"/>
           <contactref element="R36" pad="1"/>
-        </signal>
-        <signal name="VLCD_IN">
-          <contactref element="JP1" pad="2"/>
-          <contactref element="JP1" pad="4"/>
-          <contactref element="JP1" pad="6"/>
-          <contactref element="Q1" pad="2"/>
-          <contactref element="R35" pad="1"/>
         </signal>
         <signal name="VLCD_Q">
           <contactref element="Q2" pad="3"/>
