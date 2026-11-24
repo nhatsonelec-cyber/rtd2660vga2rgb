@@ -567,7 +567,7 @@
         <element name="C24" library="rtd2660_board" package="0603" value="100nF" x="58.15" y="25.1"/>
         <element name="C25" library="rtd2660_board" package="0603" value="100nF" x="61.45" y="25.1"/>
         <element name="C26" library="rtd2660_board" package="0805" value="10uF" x="65.05" y="25.3"/>
-        <element name="Y1" library="rtd2660_board" package="HC49SMD" value="14.31818MHz" x="35.75" y="65.9" rot="R90"/>
+        <element name="Y1" library="rtd2660_board" package="HC49SMD" value="27MHz" x="35.75" y="65.9" rot="R90"/>
         <element name="C27" library="rtd2660_board" package="0603" value="22pF" x="40.15" y="58.9"/>
         <element name="C28" library="rtd2660_board" package="0603" value="22pF" x="43.45" y="58.9"/>
         <element name="R2" library="rtd2660_board" package="0603" value="10k" x="34.65" y="74.7"/>

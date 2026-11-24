@@ -160,7 +160,7 @@ def build(variant, lib):
             b.C("100nF", net, "GND", sh_core, g)
         b.C("10uF", net, "GND", sh_core, g, dev="C-0805")
     g = "Clock / reset / bias"
-    d.add("XTAL-HC49SMD", "14.31818MHz", {"1": "XTAL_I", "2": "XTAL_O"}, sh_core, g)
+    d.add("XTAL-HC49SMD", "27MHz", {"1": "XTAL_I", "2": "XTAL_O"}, sh_core, g)
     b.C("22pF", "XTAL_I", "GND", sh_core, g)
     b.C("22pF", "XTAL_O", "GND", sh_core, g)
     b.R("10k", "+3V3", "RESET#", sh_core, g)
@@ -180,7 +180,7 @@ def build(variant, lib):
     b.R("33R", "SPI_P115", "FLASH_DI", sh_core, g, dnp=True)   # swap option CLK <-> DI
     b.R("33R", "SPI_P116", "FLASH_CLK", sh_core, g, dnp=True)
     d.notes[sh_core] += [
-        "Crystal 14.31818 MHz: must match the firmware crystal setting.",
+        "Crystal 27 MHz = _RTD_XTAL _XTAL27000K in the Realtek RTD2660 SDK (PCB800099 reference).",
         "SPI: pin 115 = SCLK, 116 = SI, 117 = SO per pin names. The datasheet text swaps",
         "115/116; fit the DNP 33R pair instead if the flash does not respond.",
         "CEB (pin 118) pulled low by 10k = internal MCU boot from SPI flash.",
@@ -222,7 +222,8 @@ def build(variant, lib):
     d.notes[sh_in] += [
         "J2 VGA 1x12 2.54: 1 R, 2 GND, 3 G, 4 GND, 5 B, 6 GND, 7 HS, 8 VS, 9 GND,",
         "10 DDC_SDA, 11 DDC_SCL, 12 +5V (not used). Check against the mainboard header.",
-        "J3: ISP over DDC (Realtek ISP tool). J4 keypad: KEY_AD0/1 resistor ladders to GND.",
+        "J3: ISP over DDC (Realtek ISP tool). J4 keypad: KEY_AD0 resistor ladder to GND",
+        "(10k pull-up on board): POWER 0R, MENU 1.8k, RIGHT 3.9k, LEFT 8.2k, SOURCE 22k.",
     ]
 
     # ------------------------------------------------------------------ output

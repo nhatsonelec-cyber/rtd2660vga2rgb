@@ -2206,7 +2206,7 @@
         <part name="C24" library="rtd2660_board" deviceset="C-0603" device="" value="100nF"/>
         <part name="C25" library="rtd2660_board" deviceset="C-0603" device="" value="100nF"/>
         <part name="C26" library="rtd2660_board" deviceset="C-0805" device="" value="10uF"/>
-        <part name="Y1" library="rtd2660_board" deviceset="XTAL-HC49SMD" device="" value="14.31818MHz"/>
+        <part name="Y1" library="rtd2660_board" deviceset="XTAL-HC49SMD" device="" value="27MHz"/>
         <part name="C27" library="rtd2660_board" deviceset="C-0603" device="" value="22pF"/>
         <part name="C28" library="rtd2660_board" deviceset="C-0603" device="" value="22pF"/>
         <part name="R2" library="rtd2660_board" deviceset="R-0603" device="" value="10k"/>
@@ -2648,7 +2648,7 @@
             <text x="100.4456" y="-17.78" size="2.54" layer="97">Decoupling</text>
             <text x="0" y="-220.98" size="2.54" layer="97">Clock / reset / bias</text>
             <text x="183.004" y="-220.98" size="2.54" layer="97">SPI flash</text>
-            <text x="0" y="-281.94" size="2.1844" layer="97">Crystal 14.31818 MHz: must match the firmware crystal setting.</text>
+            <text x="0" y="-281.94" size="2.1844" layer="97">Crystal 27 MHz = _RTD_XTAL _XTAL27000K in the Realtek RTD2660 SDK (PCB800099 reference).</text>
             <text x="0" y="-284.48" size="2.1844" layer="97">SPI: pin 115 = SCLK, 116 = SI, 117 = SO per pin names. The datasheet text swaps</text>
             <text x="0" y="-289.56" size="2.1844" layer="97">115/116; fit the DNP 33R pair instead if the flash does not respond.</text>
             <text x="0" y="-292.1" size="2.1844" layer="97">CEB (pin 118) pulled low by 10k = internal MCU boot from SPI flash.</text>
@@ -3470,7 +3470,8 @@
             <text x="193.1386" y="-106.68" size="2.54" layer="97">Keypad / IR</text>
             <text x="0" y="-162.56" size="2.1844" layer="97">J2 VGA 1x12 2.54: 1 R, 2 GND, 3 G, 4 GND, 5 B, 6 GND, 7 HS, 8 VS, 9 GND,</text>
             <text x="0" y="-167.64" size="2.1844" layer="97">10 DDC_SDA, 11 DDC_SCL, 12 +5V (not used). Check against the mainboard header.</text>
-            <text x="0" y="-170.18" size="2.1844" layer="97">J3: ISP over DDC (Realtek ISP tool). J4 keypad: KEY_AD0/1 resistor ladders to GND.</text>
+            <text x="0" y="-170.18" size="2.1844" layer="97">J3: ISP over DDC (Realtek ISP tool). J4 keypad: KEY_AD0 resistor ladder to GND</text>
+            <text x="0" y="-175.26" size="2.1844" layer="97">(10k pull-up on board): POWER 0R, MENU 1.8k, RIGHT 3.9k, LEFT 8.2k, SOURCE 22k.</text>
           </plain>
           <instances>
             <instance part="J2" gate="G$1" x="30.48" y="-27.94"/>

@@ -38,6 +38,7 @@ python3 tools/preview.py        # sinh preview/*.pdf
 - `tools/circuit.py`: mạch điện, pinout các đầu nối, bảng GPIO
 - `tools/parts.py`: ký hiệu, footprint, sơ đồ chân RTD2660
 - `tools/gen_eagle.py`: ghi file Eagle và xếp linh kiện trên board
+- `firmware/apply_board.py`: áp cấu hình board và màn lên SDK firmware RTD2660
 
 Nếu header VGA trên mainboard có thứ tự chân khác, chỉ cần sửa `VGA12_PINOUT` trong `tools/circuit.py`.
 
@@ -231,12 +232,24 @@ Nguồn panel được bật bằng MOSFET P qua chân PANEL_ON.
 
 ## Những điểm cần kiểm tra trước khi đặt mạch
 
-1. **Thạch anh 14.31818 MHz.** Datasheet không ghi rõ tần số. Phải khớp với firmware bạn dùng; nhiều firmware dùng 14.318 MHz, một số dùng 24.576 MHz hoặc 27 MHz.
+1. **Thạch anh 27 MHz**, giống board tham chiếu PCB800099 của SDK Realtek (`_RTD_XTAL = _XTAL27000K`).
 2. **Chân SPI flash.** Tên chân (115 SCLK, 116 SI, 117 SO) và phần mô tả trong datasheet bị lệch nhau ở chân 115/116.
    Mạch đi theo tên chân. Có sẵn cặp điện trở 33R (DNP) để đảo CLK/DI nếu flash không chạy.
 3. **Thứ tự chân header VGA 12P.** Phải khớp với mainboard của bạn.
 4. **Pinout màn 40P/50P** lấy theo chuẩn phổ biến (AT043TN24, AT070TN92). Dòng LED, mức VGH/VGL/VCOM và các chân MODE/L-R/U-D cần đối chiếu datasheet màn cụ thể.
 5. **Footprint.** Footprint FPC, biến trở 3x3 và cuộn cảm là loại chung, cần đối chiếu linh kiện thực tế.
    Pad tản nhiệt của RTD2660 là 7 x 7 mm nối GND; nên thêm via tản nhiệt khi đi dây.
-6. **Firmware.** Firmware phải đặt DISP_TYPE (CR8C-00) = LVDS hoặc TTL, TTL 24 bit, 1 pixel/clock, độ phân giải và timing của màn, cùng các GPIO ở bảng trên.
-   Repo không có firmware.
+6. **Firmware.** Xem `firmware/README.md`: script áp cấu hình board và màn này lên SDK RTD2660, sau đó biên dịch bằng Keil C51.
+
+## Bàn phím (J4)
+
+SDK đọc phím bằng một kênh ADC 6 bit (KEY_AD0, chân 50). Trên board đã có điện trở kéo lên 10k.
+Trên bo phím, mỗi nút nối KEY_AD0 xuống GND qua một điện trở:
+
+| Nút | Điện trở xuống GND | Mã ADC |
+|---|---|---|
+| POWER | 0 Ω | 0 |
+| MENU | 1.8k | 10 |
+| RIGHT | 3.9k | 18 |
+| LEFT | 8.2k | 28 |
+| SOURCE | 22k | 43 |

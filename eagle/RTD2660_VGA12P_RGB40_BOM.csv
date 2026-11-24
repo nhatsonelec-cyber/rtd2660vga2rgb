@@ -44,4 +44,4 @@ Qty,Value,Package,Description,Fit,References
 2,AMS1117-1.8,SOT223,"AMS1117 LDO, SOT-223 (tab = VOUT)",yes,U5 U6
 1,W25Q40,SOIC8,"SPI NOR flash 25-series, SOIC-8 (W25Q40 / MX25L4006)",yes,U7
 1,MT3608,SOT23-6,"MT3608 2 A boost converter, SOT-23-6, VFB = 0.6 V",yes,U9
-1,14.31818MHz,HC49SMD,Crystal HC-49/US SMD,yes,Y1
+1,27MHz,HC49SMD,Crystal HC-49/US SMD,yes,Y1
